@@ -29,7 +29,7 @@ require "paq" {
     "mfussenegger/nvim-lint";
     "tanvirtin/monokai.nvim";
     "nvim-treesitter/nvim-treesitter";
-    "ewis6991/impatient.nvim";
+    "lewis6991/impatient.nvim";
 }
 
 require('bufferline').setup{}
