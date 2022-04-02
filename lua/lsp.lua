@@ -1,5 +1,11 @@
 require('lint').linters_by_ft = {
-  markdown = {'vale', 'eslint', 'rubocop', 'yamllint', 'pylint', 'markdownlint', 'golangcilint', }
+  markdown = {'vale', },
+  typescript = {'eslint'},
+  javascript = {'eslint'},
+  go = {'golangcilint'},
+  yaml = {'yamllint'},
+  python = {'pylint'}
+
 }
 
 -- Mappings.
