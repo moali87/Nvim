@@ -499,6 +499,6 @@ vim.api.nvim_set_keymap('n', '<c-p>',
    "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json}'\"})<CR>",
   { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<F5>',
+vim.api.nvim_set_keymap('n', '<F6>',
   "<cmd> lua require('fzf-lua').buffers()<CR>",
   { noremap = true, silent = true })
