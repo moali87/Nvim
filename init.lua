@@ -63,3 +63,9 @@ nmap("<F3>", ":bprevious<CR>")
 nmap("<F4>", ":bnext<CR>")
 nmap("<F5>", ":bd<CR>")
 nmap("<leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
+
+-- Map panel movement keys
+nmap("<C-K>", "<C-W><C-K>")
+nmap("<C-J>", "<C-W><C-J>")
+nmap("<C-H>", "<C-W><C-H>")
+nmap("<C-L>", "<C-W><C-L")
