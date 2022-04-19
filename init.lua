@@ -48,6 +48,8 @@ set shell=/bin/bash
 syntax on
 set completeopt=menu,menuone,noselect
 au BufWritePost <buffer> lua require('lint').try_lint()
+set fillchars+=vert:\|
+hi vertsplit guifg=fg guibg=bg
 ]])
 
 -- Disable arrow keys
