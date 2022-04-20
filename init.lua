@@ -50,6 +50,7 @@ set completeopt=menu,menuone,noselect
 au BufWritePost <buffer> lua require('lint').try_lint()
 set fillchars+=vert:\|
 hi vertsplit guifg=fg guibg=bg
+hi Visual term=reverse cterm=reverse guibg=Grey
 ]])
 
 -- Disable arrow keys
