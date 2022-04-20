@@ -64,14 +64,14 @@ imap("<right>", "<nop>")
 nmap("<leader>gg", ":LazyGit<CR>")
 nmap("<F3>", ":bprevious<CR>")
 nmap("<F4>", ":bnext<CR>")
-nmap("<F9>", ":bd<CR>")
+nmap("<F5>", ":bd<CR>")
 nmap("<leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
 
 -- Map panel movement keys
-nmap("<F5>", "<C-W><C-J>")
-nmap("<F6>", "<C-W><C-K>")
-nmap("<F7>", "<C-W><C-H>")
-nmap("<F8>", "<C-W><C-L>")
+nmap("<F7>", "<C-W><C-J>")
+nmap("<F8>", "<C-W><C-K>")
+nmap("<F9>", "<C-W><C-H>")
+nmap("<F10>", "<C-W><C-L>")
 
 -- Map fzf-lua
 nmap("<c-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{.git/*,node_modules/*}'\"})<CR>")
