@@ -44,7 +44,7 @@ set smartcase
 set wildmenu
 set wildmode=full,list
 set nocompatible
-set shell=/bin/bash
+set shell=/bin/zsh
 syntax on
 set completeopt=menu,menuone,noselect
 au BufWritePost <buffer> lua require('lint').try_lint()
