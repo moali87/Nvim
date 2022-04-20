@@ -71,3 +71,10 @@ nmap("<F5>", "<C-W><C-J>")
 nmap("<F6>", "<C-W><C-K>")
 nmap("<F7>", "<C-W><C-H>")
 nmap("<F8>", "<C-W><C-L>")
+
+-- Map fzf-lua
+nmap("<c-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{.git/*,node_modules/*}'\"})<CR>")
+
+nmap("<c-p>", "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json}'\"})<CR>")
+
+nmap("<F2>", "<cmd> lua require('fzf-lua').buffers()<CR>")

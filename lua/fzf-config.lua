@@ -489,16 +489,16 @@ require'fzf-lua'.setup {
   -- nbsp = '\xc2\xa0',
 }
 
-vim.api.nvim_set_keymap('n',
-  '<c-o>',
-  "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{.git/*,node_modules/*}'\"})<CR>",
-  { noremap = true, silent = true }
-)
+--vim.api.nvim_set_keymap('n',
+  --'<c-o>',
+  --"<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{.git/*,node_modules/*}'\"})<CR>",
+  --{ noremap = true, silent = true }
+--)
 
-vim.api.nvim_set_keymap('n', '<c-p>',
-   "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json}'\"})<CR>",
-  { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<c-p>',
+   --"<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json}'\"})<CR>",
+  --{ noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<F6>',
-  "<cmd> lua require('fzf-lua').buffers()<CR>",
-  { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<F2>',
+  --"<cmd> lua require('fzf-lua').buffers()<CR>",
+  --{ noremap = true, silent = true })

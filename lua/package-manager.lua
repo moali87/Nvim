@@ -14,7 +14,6 @@ require "paq" {
     "nvim-lua/plenary.nvim";
     "lewis6991/gitsigns.nvim";
     "folke/trouble.nvim";
-    "907th/vim-auto-save";
     "windwp/nvim-autopairs";
     "preservim/nerdcommenter";
     "hashivim/vim-terraform";
