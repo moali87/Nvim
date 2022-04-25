@@ -111,7 +111,9 @@ require('bufferline').setup {
 }
 
 require("luasnip.loaders.from_vscode").lazy_load()
+
 require('nvim-autopairs').setup{}
+
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
