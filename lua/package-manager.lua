@@ -16,13 +16,12 @@ require "paq" {
     "folke/trouble.nvim";
     "windwp/nvim-autopairs";
     "preservim/nerdcommenter";
-    "hashivim/vim-terraform";
     "lukas-reineke/indent-blankline.nvim";
     "ibhagwan/fzf-lua";
     "kdheepak/lazygit.nvim";
     "folke/lsp-colors.nvim";
     "ntpeters/vim-better-whitespace";
-    "akinsho/bufferline.nvim";
+    {"akinsho/bufferline.nvim", branch="main"};
     "L3MON4D3/LuaSnip";
     "saadparwaiz1/cmp_luasnip";
     "mfussenegger/nvim-lint";
