@@ -116,7 +116,21 @@ require("luasnip.loaders.from_vscode").lazy_load()
 require('nvim-autopairs').setup{}
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "norg", "typescript", "lua", "go", "ruby" },
+  ensure_installed = {
+    "norg",
+    "typescript",
+    "lua",
+    "go",
+    "ruby",
+    "fish",
+    "html",
+    "javascript",
+    "jsdoc",
+    "json",
+    "jsdoc",
+    "yaml",
+    "bash"
+  },
   highlight = {
     enable = true,
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
