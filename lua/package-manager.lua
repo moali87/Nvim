@@ -28,6 +28,8 @@ require "paq" {
     "tanvirtin/monokai.nvim";
     "nvim-treesitter/nvim-treesitter";
     "lewis6991/impatient.nvim";
+    "nvim-neorg/neorg";
+    {'stevearc/gkeep.nvim', run = vim.fn['remote#host#UpdateRemotePlugins']};
 }
 
 require('bufferline').setup {
@@ -114,6 +116,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 require('nvim-autopairs').setup{}
 
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "norg", "typescript", "lua", "go", "ruby" },
   highlight = {
     enable = true,
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -122,4 +125,10 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+}
+
+require('neorg').setup {
+    load = {
+        ["core.defaults"] = {}
+    }
 }
