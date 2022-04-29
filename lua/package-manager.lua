@@ -159,3 +159,6 @@ require('neorg').setup {
         ["core.defaults"] = {}
     }
 }
+
+require('gitsigns').setup()
+require('lualine').setup()

@@ -4,9 +4,6 @@ require('lsp')
 require('code_actions_utils')
 require('fzf-config')
 require('key-functions')
-require('gitsigns').setup()
-require('lualine').setup()
-require('trouble').setup()
 
 -- VIM Leader key
 vim.g.mapleader = ","
