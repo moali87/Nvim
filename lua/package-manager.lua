@@ -160,3 +160,5 @@ require('neorg').setup {
         ["core.defaults"] = {}
     }
 }
+
+require('trouble').setup{}
