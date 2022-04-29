@@ -1,35 +1,49 @@
 require "paq" {
     "savq/paq-nvim";                  -- Let Paq manage itself
+
+    -- All CMP modules
     "hrsh7th/nvim-cmp";
     "hrsh7th/cmp-cmdline";
     "hrsh7th/cmp-path";
     "hrsh7th/cmp-buffer";
     "hrsh7th/cmp-nvim-lsp";
+    "hrsh7th/cmp-nvim-lsp-signature-help";
+    "hrsh7th/cmp-nvim-lua";
+    "mtoohey31/cmp-fish";
+    "saadparwaiz1/cmp_luasnip";
 
+    -- LSP plugins
     "neovim/nvim-lspconfig";          -- Mind the semi-colons
+    "mfussenegger/nvim-lint";
 
-    {"lervag/vimtex", opt=true};      -- Use braces when passing options
-    "nvim-lualine/lualine.nvim";
-    "kyazdani42/nvim-web-devicons";
-    "nvim-lua/plenary.nvim";
-    "lewis6991/gitsigns.nvim";
-    "folke/trouble.nvim";
+    -- Plugins for writing code
     "windwp/nvim-autopairs";
     "preservim/nerdcommenter";
     "lukas-reineke/indent-blankline.nvim";
-    "ibhagwan/fzf-lua";
-    "kdheepak/lazygit.nvim";
     "folke/lsp-colors.nvim";
     "ntpeters/vim-better-whitespace";
-    {"akinsho/bufferline.nvim", branch="main"};
-    "L3MON4D3/LuaSnip";
-    "saadparwaiz1/cmp_luasnip";
-    "mfussenegger/nvim-lint";
-    "tanvirtin/monokai.nvim";
+    "nvim-lualine/lualine.nvim";
     "nvim-treesitter/nvim-treesitter";
+    "folke/trouble.nvim";
+    "L3MON4D3/LuaSnip";
+    "tanvirtin/monokai.nvim";
+
+    -- Plugins to improve neovim experince with third party applications
     "lewis6991/impatient.nvim";
+    "nvim-lua/plenary.nvim";
+    "kdheepak/lazygit.nvim";
+
+    -- Plugins for convenience
+    "lewis6991/gitsigns.nvim";
+    "kyazdani42/nvim-web-devicons";
+    "ibhagwan/fzf-lua";
+    {"akinsho/bufferline.nvim", branch="main"};
+    {"lervag/vimtex", opt=true};      -- Use braces when passing options
+
+    -- Note taking plugins
     "nvim-neorg/neorg";
     {'stevearc/gkeep.nvim', run = vim.fn['remote#host#UpdateRemotePlugins']};
+
 }
 
 require('bufferline').setup {
