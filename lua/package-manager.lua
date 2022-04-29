@@ -24,7 +24,6 @@ require "paq" {
     "ntpeters/vim-better-whitespace";
     "nvim-lualine/lualine.nvim";
     "nvim-treesitter/nvim-treesitter";
-    "folke/trouble.nvim";
     "L3MON4D3/LuaSnip";
     "tanvirtin/monokai.nvim";
 
@@ -160,5 +159,3 @@ require('neorg').setup {
         ["core.defaults"] = {}
     }
 }
-
-require('trouble').setup{}
