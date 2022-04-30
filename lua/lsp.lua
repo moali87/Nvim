@@ -135,13 +135,13 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'fish' },
-    { name = 'nvim_lsp_signature_help' },
+    --{ name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lua' },
-    { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'cmdline' },
     -- { name = 'vsnip' }, -- For vsnip users.
     { name = 'luasnip' }, -- For luasnip users.
+    { name = 'nvim_lsp' },
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
