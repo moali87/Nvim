@@ -44,6 +44,7 @@ require "paq" {
     {'stevearc/gkeep.nvim', run = vim.fn['remote#host#UpdateRemotePlugins']};
 
 }
+require('impatient')
 
 require('bufferline').setup {
   options = {

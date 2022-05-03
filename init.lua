@@ -1,5 +1,4 @@
 require('package-manager')
-require('impatient')
 require('lsp')
 require('code_actions_utils')
 require('fzf-config')

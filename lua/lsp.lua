@@ -8,6 +8,9 @@ require('lint').linters_by_ft = {
   luacheck = {'luacheck'}
 }
 
+local lspconfig = require('lspconfig')
+local luasnip = require('luasnip')
+local cmp = require('cmp')
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -42,8 +45,6 @@ end
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls'}
@@ -85,12 +86,7 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
--- luasnip setup
-local luasnip = require 'luasnip'
-
--- nvim-cmp setup
-local cmp = require'cmp'
-
+-- Cmp setup
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -134,6 +130,7 @@ cmp.setup({
     end,
   }),
   sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
     { name = 'fish' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lua' },
@@ -141,7 +138,6 @@ cmp.setup({
     { name = 'cmdline' },
     -- { name = 'vsnip' }, -- For vsnip users.
     { name = 'luasnip' }, -- For luasnip users.
-    { name = 'nvim_lsp' },
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
