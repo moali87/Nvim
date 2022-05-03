@@ -50,6 +50,9 @@ hi vertsplit guifg=fg guibg=bg
 hi Visual term=reverse cterm=reverse guibg=Grey
 ]])
 
+-- python3
+vim.g.python3_host_prog = '/Users/akhter.ali/.pyenv/shims/python'
+
 -- Disable arrow keys
 
 imap("<up>", "<nop>")
