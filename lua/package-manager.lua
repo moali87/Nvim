@@ -43,7 +43,6 @@ require "paq" {
     -- Note taking plugins
     "nvim-neorg/neorg";
     {'stevearc/gkeep.nvim', run = vim.fn['remote#host#UpdateRemotePlugins']};
-
 }
 require('impatient')
 
@@ -130,7 +129,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 require('nvim-autopairs').setup{}
 
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = {
     "norg",
     "typescript",
@@ -159,7 +158,10 @@ require'nvim-treesitter.configs'.setup {
 
 require('neorg').setup {
     load = {
-        ["core.defaults"] = {}
+        ["core.defaults"] = {},
+        ["core.norg.concealer"] = {},
+        ["core.norg.qol.toc"] = {},
+        ["core.integrations.nvim-cmp"] = {}
     }
 }
 

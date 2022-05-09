@@ -80,3 +80,6 @@ nmap("<c-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color
 nmap("<c-p>", "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json}'\"})<CR>")
 
 nmap("<F2>", "<cmd> lua require('fzf-lua').buffers()<CR>")
+
+-- Set GKeep notes directory
+vim.g.gkeep_sync_dir = '~/notes'
