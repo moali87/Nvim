@@ -144,7 +144,8 @@ require'nvim-treesitter.configs'.setup {
     "json",
     "jsdoc",
     "yaml",
-    "bash"
+    "bash",
+    "hcl"
   },
   highlight = {
     enable = true,
