@@ -43,6 +43,9 @@ require "paq" {
     -- Note taking plugins
     "nvim-neorg/neorg";
     {'stevearc/gkeep.nvim', run = vim.fn['remote#host#UpdateRemotePlugins']};
+
+    -- Focus mode
+    "folke/zen-mode.nvim";
 }
 require('impatient')
 
@@ -156,13 +159,25 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+require('zen-mode').setup{}
+
 require('neorg').setup {
-    load = {
-        ["core.defaults"] = {},
-        ["core.norg.concealer"] = {},
-        ["core.norg.qol.toc"] = {},
-        ["core.integrations.nvim-cmp"] = {}
+  load = {
+    ["core.defaults"] = {},
+    ["core.norg.concealer"] = {},
+    ["core.norg.qol.toc"] = {},
+    ["core.integrations.nvim-cmp"] = {},
+    ["core.presenter"] = {
+      config = {
+        zen_mode = "zen-mode"
+      }
+    },
+    ["core.norg.completion"] = {
+      config = {
+        engine = "nvim-cmp"
+      }
     }
+  }
 }
 
 require('gitsigns').setup()
