@@ -36,7 +36,7 @@ require'fzf-lua'.setup {
       -- scrollbar_e = 'PmenuSbar',     -- scrollbar "empty" section highlight
     },
     preview = {
-      -- default     = 'bat',           -- override the default previewer?
+      default        = 'bat',           -- override the default previewer?
                                         -- default uses the 'builtin' previewer
       border         = 'border',        -- border|noborder, applies only to
                                         -- native fzf previewers (bat/cat/git/etc)
@@ -218,8 +218,8 @@ require'fzf-lua'.setup {
                                         -- set to 'false' to disable
     prompt            = 'Files❯ ',
     multiprocess      = true,           -- run command in a separate process
-    git_icons         = true,           -- show git icons?
-    file_icons        = true,           -- show file icons?
+    git_icons         = false,           -- show git icons?
+    file_icons        = false,           -- show file icons?
     color_icons       = true,           -- colorize file|git icons
     -- executed command priority is 'cmd' (if exists)
     -- otherwise auto-detect prioritizes `fd`:`rg`:`find`
@@ -306,8 +306,8 @@ require'fzf-lua'.setup {
     prompt            = 'Rg❯ ',
     input_prompt      = 'Grep For❯ ',
     multiprocess      = true,           -- run command in a separate process
-    git_icons         = true,           -- show git icons?
-    file_icons        = true,           -- show file icons?
+    git_icons         = false,           -- show git icons?
+    file_icons        = false,           -- show file icons?
     color_icons       = true,           -- colorize file|git icons
     -- executed command priority is 'cmd' (if exists)
     -- otherwise auto-detect prioritizes `rg` over `grep`
@@ -488,17 +488,3 @@ require'fzf-lua'.setup {
   -- 'EN SPACE' (U+2002), the below sets it to 'NBSP' (U+00A0) instead
   -- nbsp = '\xc2\xa0',
 }
-
---vim.api.nvim_set_keymap('n',
-  --'<c-o>',
-  --"<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{.git/*,node_modules/*}'\"})<CR>",
-  --{ noremap = true, silent = true }
---)
-
---vim.api.nvim_set_keymap('n', '<c-p>',
-   --"<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json}'\"})<CR>",
-  --{ noremap = true, silent = true })
-
---vim.api.nvim_set_keymap('n', '<F2>',
-  --"<cmd> lua require('fzf-lua').buffers()<CR>",
-  --{ noremap = true, silent = true })

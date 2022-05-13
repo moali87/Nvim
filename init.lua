@@ -81,5 +81,9 @@ nmap("<c-p>", "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --
 
 nmap("<F2>", "<cmd> lua require('fzf-lua').buffers()<CR>")
 
+-- MISC toggles
+nmap("<F4>", "<cmd> IndentBlanklineToggle<CR>")
+nmap("<F5>", "<cmd> GkeepToggle<CR>")
+
 -- Set GKeep notes directory
 vim.g.gkeep_sync_dir = '~/notes'
