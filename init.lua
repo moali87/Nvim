@@ -75,15 +75,16 @@ nmap("<leader>r", "<C-W><C-H>")
 nmap("<leader>t", "<C-W><C-L>")
 
 -- Map fzf-lua
-nmap("<c-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{.git/*,node_modules/*}'\"})<CR>")
+nmap("<c-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{API.*,.git/*,node_modules/*,docs/*}'\"})<CR>")
 
-nmap("<c-p>", "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json}'\"})<CR>")
+nmap("<c-p>", "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json,docs/*}'\"})<CR>")
 
 nmap("<F2>", "<cmd> lua require('fzf-lua').buffers()<CR>")
 
 -- MISC toggles
 nmap("<F4>", "<cmd> IndentBlanklineToggle<CR>")
 nmap("<F5>", "<cmd> GkeepToggle<CR>")
+nmap("<F8>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
 
 -- Set GKeep notes directory
 vim.g.gkeep_sync_dir = '~/notes'

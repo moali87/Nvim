@@ -174,7 +174,7 @@ require'fzf-lua'.setup {
     bat = {
       cmd             = "bat",
       args            = "--style=numbers,changes --color always",
-      theme           = 'Coldark-Dark', -- bat preview theme (bat --list-themes)
+      theme           = 'Monokai Extended', -- bat preview theme (bat --list-themes)
       config          = nil,            -- nil uses $BAT_CONFIG_PATH
     },
     head = {
