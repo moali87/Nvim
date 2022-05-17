@@ -169,4 +169,7 @@ require('neorg').setup {
 }
 
 require('gitsigns').setup()
-require('lualine').setup()
+require('lualine').setup({
+  options = { theme = 'powerline' }
+})
+require('nvim-autopairs').setup{}
