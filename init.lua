@@ -92,3 +92,9 @@ nmap("<F9>", "<cmd> vsplit | term<CR>")
 
 -- Eslint mapping
 --nmap("<Leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
+
+
+-- MISC toggles
+nmap("<F4>", "<cmd> IndentBlanklineToggle<CR>")
+nmap("<F5>", "<cmd> GkeepToggle<CR>")
+nmap("<F8>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
