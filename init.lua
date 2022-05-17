@@ -8,7 +8,7 @@ require('key-functions')
 vim.g.mapleader = ","
 
 -- UTF-8
-vim.opt.encoding="utf-8"
+vim.opt.encoding = "utf-8"
 
 -- VIM RTP
 vim.cmd([[
@@ -25,9 +25,9 @@ set foldlevel=2
 
 -- VIM Colorscheme
 vim.cmd([[
-colorscheme monokai_pro
 set termguicolors
 ]])
+vim.api.nvim_command('colorscheme monokai_pro')
 
 -- VIM editor settings
 vim.cmd([[
@@ -40,7 +40,7 @@ set smartcase
 set wildmenu
 set wildmode=full,list
 set nocompatible
-set shell=/bin/bash
+set shell=/usr/local/bin/fish
 syntax on
 set completeopt=menu,menuone,noselect
 au BufWritePost <buffer> lua require('lint').try_lint()
