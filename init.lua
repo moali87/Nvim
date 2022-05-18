@@ -58,19 +58,20 @@ imap("<right>", "<nop>")
 
 -- Map keys
 -- Map LazyGit
-nmap("<leader>gg", ":LazyGit<CR>")
+nmap("<Leader>gg", ":LazyGit<CR>")
 
 -- Map buffer movement
-nmap("<leader>w", ":bprevious<CR>")
-nmap("<leader>e", ":bnext<CR>")
-nmap("<leader>q", ":bd<CR>")
+nmap("<Leader>w", ":bprevious<CR>")
+nmap("<Leader>e", ":bnext<CR>")
+nmap("<Leader>q", ":bd<CR>")
 nmap("<Leader>Q", ":bd!<CR>")
+nmap("<F2>", "<cmd>lua require('fzf-lua').buffers()")
 
 -- Map panel movement keys
-nmap("<leader>v", "<C-W><C-J>")
-nmap("<leader>f", "<C-W><C-K>")
-nmap("<leader>r", "<C-W><C-H>")
-nmap("<leader>t", "<C-W><C-L>")
+nmap("<Leader>v", "<C-W><C-J>")
+nmap("<Leader>f", "<C-W><C-K>")
+nmap("<Leader>r", "<C-W><C-H>")
+nmap("<Leader>t", "<C-W><C-L>")
 
 -- Map fzf-lua
 nmap("<C-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{API.*,.git/*,node_modules/*,docs/*}'\"})<CR>")
@@ -85,4 +86,4 @@ tmap("<Leader><ESC>", "<C-\\><C-n>")
 nmap("<F9>", "<cmd> vsplit | term<CR>")
 
 -- Eslint mapping
-nmap("<leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
+nmap("<Leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
