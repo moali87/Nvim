@@ -173,3 +173,4 @@ require('lualine').setup({
   options = { theme = 'powerline' }
 })
 require('nvim-autopairs').setup{}
+vim.g.gkeep_sync_dir = '~/notes'

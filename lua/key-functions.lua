@@ -10,3 +10,7 @@ end
 function nmap(shortcut, command)
 	map('n', shortcut, command)
 end
+
+function tmap(shortcut, command)
+  map('t', shortcut, command)
+end
