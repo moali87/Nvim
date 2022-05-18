@@ -76,9 +76,6 @@ nmap("<leader>t", "<C-W><C-L>")
 nmap("<C-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{API.*,.git/*,node_modules/*,docs/*}'\"})<CR>")
 nmap("<C-p>", "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json,docs/*}'\"})<CR>")
 
--- MISC toggles
-nmap("<C-i>", ":IndentBlanklineToggle<CR>")
-
 -- Map notes
 nmap("<F5>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
 nmap("<F6>", "<cmd> GkeepToggle<CR>")
