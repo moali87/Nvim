@@ -65,7 +65,8 @@ nmap("<Leader>w", ":bprevious<CR>")
 nmap("<Leader>e", ":bnext<CR>")
 nmap("<Leader>q", ":bd<CR>")
 nmap("<Leader>Q", ":bd!<CR>")
-nmap("<F2>", "<cmd>lua require('fzf-lua').buffers()<CR>")
+--nmap("<F2>", "<cmd>lua require('fzf-lua').buffers()<CR>")
+nmap("<F2>", ":vert sb")
 
 -- Map panel movement keys
 nmap("<Leader>v", "<C-W><C-J>")
