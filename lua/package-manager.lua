@@ -37,7 +37,6 @@ require "paq" {
 	"kyazdani42/nvim-web-devicons";
 	"ibhagwan/fzf-lua";
 	{ "akinsho/bufferline.nvim", branch = "main" };
-	{ "lervag/vimtex", opt = true }; -- Use braces when passing options
 
 	-- Note taking plugins
 	"nvim-neorg/neorg";
