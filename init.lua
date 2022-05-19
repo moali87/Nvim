@@ -8,7 +8,13 @@ require('key-functions')
 vim.g.mapleader = ","
 
 -- python3
-vim.g.python3_host_prog = "/Users/akhter.ali/.pyenv/shims/python"
+vim.g.python3_host_prog = "~/.pyenv/shims/python"
+
+-- disable perl provider
+vim.g.loaded_perl_provider = 0
+
+-- nodejs
+vim.g.node_host_prog = '~/.local/share/nvm/v16.13.0/bin/neovim-node-host'
 
 -- UTF-8
 vim.opt.encoding = "utf-8"
@@ -16,6 +22,7 @@ vim.opt.encoding = "utf-8"
 -- VIM RTP
 vim.api.nvim_command([[
 set rtp+=/usr/local/opt/fzf
+set rtp+=~/.local/share/nvm/v16.13.0
 ]])
 
 -- VIM folding
@@ -65,7 +72,6 @@ nmap("<Leader>w", ":bprevious<CR>")
 nmap("<Leader>e", ":bnext<CR>")
 nmap("<Leader>q", ":bd<CR>")
 nmap("<Leader>Q", ":bd!<CR>")
---nmap("<F2>", "<cmd>lua require('fzf-lua').buffers()<CR>")
 nmap("<F2>", ":vert sb")
 
 -- Map panel movement keys
@@ -87,4 +93,4 @@ tmap("<Leader><ESC>", "<C-\\><C-n>")
 nmap("<F9>", "<cmd> vsplit | term<CR>")
 
 -- Eslint mapping
-nmap("<Leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
+--nmap("<Leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
