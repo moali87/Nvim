@@ -69,7 +69,7 @@ return packer.startup(function ()
 
   use({
     'mfussenegger/nvim-lint',
-    requires = {{'nvim/nvim-lspconfig'}, opt = true},
+    requires = {{'neovim/nvim-lspconfig'}, opt = true},
     config = function ()
       require('plugin-configs.nvim-lint')
     end
