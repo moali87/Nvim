@@ -7,9 +7,7 @@ return packer.startup(function ()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function ()
-      require('nvim-treesitter.configs').setup({
-        require('lua.plugin-configs.treesitter')
-      })
+      require('nvim-treesitter.configs').setup(require('lua.plugin-configs.treesitter'))
     end
   })
 
