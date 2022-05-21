@@ -1,8 +1,5 @@
---require('package-manager')
 require('plugins')
-require('lsp')
 require('code_actions_utils')
-require('fzf-config')
 require('key-functions')
 
 -- VIM Leader key
