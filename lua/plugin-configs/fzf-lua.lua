@@ -1,3 +1,4 @@
+local actions = require("fzf-lua.actions")
 return {
   -- fzf_bin         = 'sk',            -- use skim instead of fzf?
                                         -- https://github.com/lotabout/skim

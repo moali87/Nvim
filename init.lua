@@ -1,4 +1,4 @@
-require('package-manager')
+--require('package-manager')
 require('plugins')
 require('lsp')
 require('code_actions_utils')

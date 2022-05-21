@@ -7,7 +7,9 @@ return packer.startup(function ()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function ()
-      require('plugin-configs.treesitter')
+      require('nvim-treesitter.configs').setup({
+        require('lua.plugin-configs.treesitter')
+      })
     end
   })
 
@@ -26,7 +28,6 @@ return packer.startup(function ()
   use({
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-cmdline',
-    'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-nvim-lsp',
@@ -44,7 +45,9 @@ return packer.startup(function ()
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function ()
-      require('lualine').setup()
+      require('lualine').setup({
+        options = { theme = 'powerline' }
+      })
     end
   })
 
@@ -53,7 +56,7 @@ return packer.startup(function ()
     -- optional for icon support
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function ()
-      require('plugin-configs.fzf-lua.fzf-lua')
+      require('plugin-configs.fzf-lua')
     end
   })
 
@@ -131,9 +134,7 @@ return packer.startup(function ()
     'windwp/nvim-autopairs',
     requires = {{'hrsh7th/nvim-cmp'}, opt = true},
     config = function ()
-      local cmp = require('cmp')
-      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
-      cmp_autopairs.lisp[#cmp_autopairs.lisp+1] = "racket"
+      require('nvim-autopairs').setup()
     end
   })
 end)

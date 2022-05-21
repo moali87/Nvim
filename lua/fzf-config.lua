@@ -1,4 +1,4 @@
-local actions = require "fzf-lua.actions"
+local actions = require("fzf-lua.actions")
 require'fzf-lua'.setup {
   -- fzf_bin         = 'sk',            -- use skim instead of fzf?
                                         -- https://github.com/lotabout/skim
