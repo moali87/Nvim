@@ -62,9 +62,9 @@ return packer.startup(function ()
     'akinsho/bufferline.nvim',
     tag = "v2.*",
     requires = {{'kyazdani42/nvim-web-devicons'}, opt = true}, config = function ()
-      require('bufferline').setup({
+      require('bufferline').setup(
         require('plugin-configs.bufferline')
-      })
+      )
     end
   })
 
@@ -72,16 +72,14 @@ return packer.startup(function ()
     'mfussenegger/nvim-lint',
     requires = {{'neovim/nvim-lspconfig'}, opt = true},
     config = function ()
-      require('plugin-configs.nvim-lint')
+      require('lint').setup(require('plugin-configs.nvim-lint'))
     end
   })
 
   use({
       "nvim-neorg/neorg",
       config = function()
-        require('neorg').setup {
-          require('plugin-configs.neorg')
-        }
+        require('neorg').setup(require('plugin-configs.neorg'))
       end,
       requires = "nvim-lua/plenary.nvim"
   })
