@@ -115,6 +115,7 @@ cmp.setup({
     { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lua' },
     { name = 'path' },
+    { name = 'cmp_tabnine' },
     -- { name = 'vsnip' }, -- For vsnip users.
     { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.

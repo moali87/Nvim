@@ -42,6 +42,15 @@ return packer.startup(function()
   })
 
   use({
+    'tzachar/cmp-tabnine',
+    run = './install.sh',
+    requires = 'hrsh7th/nvim-cmp',
+    config = function ()
+      require('plugin-configs.tabnine-config')
+    end
+  })
+
+  use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function()
