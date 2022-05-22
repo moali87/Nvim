@@ -52,17 +52,6 @@ return packer.startup(function()
   })
 
   use({
-    'ray-x/navigator.lua',
-    requires = {
-      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-      { 'neovim/nvim-lspconfig' },
-    },
-    config = function()
-      require('navigator').setup()
-    end
-  })
-
-  use({
     'ibhagwan/fzf-lua',
     -- optional for icon support
     requires = { 'kyazdani42/nvim-web-devicons' },
