@@ -1,7 +1,5 @@
-require('package-manager')
-require('lsp')
+require('plugins')
 require('code_actions_utils')
-require('fzf-config')
 require('key-functions')
 
 -- VIM Leader key
@@ -92,5 +90,19 @@ nmap("<F6>", "<cmd> GkeepToggle<CR>")
 tmap("<Leader><ESC>", "<C-\\><C-n>")
 nmap("<F9>", "<cmd> vsplit | term<CR>")
 
+-- MISC toggles
+nmap("<F4>", "<cmd> IndentBlanklineToggle<CR>")
+nmap("<F5>", "<cmd> GkeepToggle<CR>")
+nmap("<F8>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
+nmap("<c-i>", "<cmd> IndentBlanklineToggle<CR>")
+
+-- Map notes
+nmap("<F5>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
+nmap("<F6>", "<cmd> GkeepToggle<CR>")
+
+-- Map Terminal
+tmap("<Leader><ESC>", "<C-\\><C-n>")
+nmap("<F9>", "<cmd> vsplit | term<CR>")
+
 -- Eslint mapping
---nmap("<Leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
+nmap("<leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
