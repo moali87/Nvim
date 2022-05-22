@@ -62,12 +62,10 @@ imap("<left>", "<nop>")
 imap("<right>", "<nop>")
 
 -- Map keys
-<<<<<<< HEAD
 -- Map LazyGit
 nmap("<Leader>gg", ":LazyGit<CR>")
 
 -- Map buffer movement
-<<<<<<< HEAD
 nmap("<Leader>w", ":bprevious<CR>")
 nmap("<Leader>e", ":bnext<CR>")
 nmap("<Leader>q", ":bd<CR>")
