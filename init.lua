@@ -82,27 +82,13 @@ nmap("<Leader>t", "<C-W><C-L>")
 nmap("<C-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{API.*,.git/*,node_modules/*,docs/*}'\"})<CR>")
 nmap("<C-p>", "<cmd>lua require('fzf-lua').grep_visual({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git/*,node_modules,package-lock.json,docs/*}'\"})<CR>")
 
--- Map notes
-nmap("<F5>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
-nmap("<F6>", "<cmd> GkeepToggle<CR>")
-
 -- Map Terminal
 tmap("<Leader><ESC>", "<C-\\><C-n>")
 nmap("<F9>", "<cmd> vsplit | term<CR>")
 
 -- MISC toggles
 nmap("<F4>", "<cmd> IndentBlanklineToggle<CR>")
-nmap("<F5>", "<cmd> GkeepToggle<CR>")
-nmap("<F8>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
-nmap("<c-i>", "<cmd> IndentBlanklineToggle<CR>")
-
--- Map notes
 nmap("<F5>", "<cmd> e ~/notes/Upstart Standup.norg<CR>")
-nmap("<F6>", "<cmd> GkeepToggle<CR>")
-
--- Map Terminal
-tmap("<Leader><ESC>", "<C-\\><C-n>")
-nmap("<F9>", "<cmd> vsplit | term<CR>")
 
 -- Eslint mapping
-nmap("<leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
+-- nmap("<leader>f", "mF:%!eslint_d --stdin --fix-to-stdout<CR>")
