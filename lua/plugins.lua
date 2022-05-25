@@ -92,7 +92,8 @@ return packer.startup(function()
   use({
     'nvim-neorg/neorg',
     requires = 'nvim-lua/plenary.nvim',
-    event = 'VimEnter',
+    ft = 'norg',
+    after = 'nvim-treesitter',
     config = function()
       require('neorg').setup(require('plugin-configs.neorg-config'))
     end
