@@ -39,7 +39,8 @@ local servers = {
   'pyright',
   'tsserver',
   'gopls',
-  'terraformls'
+  'terraformls',
+  'tflint'
 }
 
 for _, lsp in ipairs(servers) do
