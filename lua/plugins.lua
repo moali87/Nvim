@@ -8,6 +8,7 @@ return packer.startup(function()
   use({ 'folke/lsp-colors.nvim' })
   use({ 'nvim-lua/plenary.nvim' })
   use({ 'kdheepak/lazygit.nvim' })
+  use({ 'lewis6991/impatient.nvim', config = function () require('impatient').enable_profile() end })
   use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -23,7 +24,13 @@ return packer.startup(function()
     'hrsh7th/nvim-cmp',
     after = 'nvim-lspconfig',
     event = 'VimEnter',
-    config = function()
+    requires = {
+      'L3MON4D3/LuaSnip',
+      config = function ()
+        require('luasnip.loaders.from_vscode').load()
+      end
+    },
+    config = function ()
       require('plugin-configs.cmp')
     end
   })
@@ -38,11 +45,6 @@ return packer.startup(function()
   use({'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp'})
   use({'hrsh7th/cmp-path', after = 'nvim-cmp'})
   use({'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp'})
-  use({'L3MON4D3/LuaSnip', after = 'nvim-cmp', config = function ()
-    require('plugin-configs.luasnip-config')
-    require('luasnip.loaders.from_vscode').lazy_load()
-  end})
-
 
   -- lualine
   use({
