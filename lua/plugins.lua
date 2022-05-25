@@ -8,6 +8,10 @@ return packer.startup(function()
   use({ 'folke/lsp-colors.nvim' })
   use({ 'nvim-lua/plenary.nvim' })
   use({ 'kdheepak/lazygit.nvim' })
+  use({ 'rcarriga/nvim-notify', config = function ()
+    require('plugin-configs.notify')
+    vim.notify = require('notify')
+  end})
   use({ 'lewis6991/impatient.nvim', config = function () require('impatient').enable_profile() end })
   use({
     'nvim-treesitter/nvim-treesitter',
