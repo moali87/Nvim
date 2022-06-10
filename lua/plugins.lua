@@ -5,6 +5,14 @@ return packer.startup(function()
   use({ 'wbthomason/packer.nvim' })
   use({ 'neovim/nvim-lspconfig' })
   use({ 'tanvirtin/monokai.nvim' })
+  use ({
+    'projekt0n/github-nvim-theme',
+    config = function ()
+      require("github-theme").setup({
+        theme_style = "dark_default",
+      })
+    end
+  })
   use({ 'folke/lsp-colors.nvim' })
   use({ 'nvim-lua/plenary.nvim' })
   use({ 'kdheepak/lazygit.nvim' })
