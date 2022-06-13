@@ -37,10 +37,13 @@ return packer.startup(function()
     after = 'nvim-lspconfig',
     event = 'VimEnter',
     requires = {
-      'L3MON4D3/LuaSnip',
-      config = function ()
-        require('luasnip.loaders.from_vscode').load()
-      end
+      {
+        'L3MON4D3/LuaSnip',
+        config = function ()
+          require('plugin-configs.luasnip')
+        end,
+        requires = {'saadparwaiz1/cmp_luasnip'},
+      },
     },
     config = function ()
       require('plugin-configs.cmp')
@@ -56,7 +59,6 @@ return packer.startup(function()
   use({'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp'})
   use({'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp'})
   use({'hrsh7th/cmp-path', after = 'nvim-cmp'})
-  use({'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp'})
 
   -- lualine
   use({
