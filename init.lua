@@ -53,6 +53,8 @@ set completeopt=menu,menuone,noselect
 set fillchars+=vert:\|
 hi vertsplit guifg=fg guibg=bg
 hi Visual term=reverse cterm=reverse guibg=Grey
+set winbar=%f
+set laststatus=3
 ]])
 
 -- Disable arrow keys
@@ -73,10 +75,14 @@ nmap("<Leader>Q", ":bd!<CR>")
 nmap("<F2>", ":vert sb")
 
 -- Map panel movement keys
+-- Down
 nmap("<Leader>v", "<C-W><C-J>")
-nmap("<Leader>f", "<C-W><C-K>")
-nmap("<Leader>r", "<C-W><C-H>")
-nmap("<Leader>t", "<C-W><C-L>")
+-- Up
+nmap("<Leader>r", "<C-W><C-K>")
+-- Left
+nmap("<Leader>f", "<C-W><C-H>")
+-- Right
+nmap("<Leader>j", "<C-W><C-L>")
 
 -- Map fzf-lua
 nmap("<C-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{API.*,.git/*,node_modules/*,docs/*}'\"})<CR>")
