@@ -101,17 +101,11 @@ cmp.setup({
     { name = 'nvim_lua' },
     { name = 'path' },
     { name = 'buffer' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
   }),
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	-- documentation = {
-	-- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-	-- },
 	experimental = {
 		ghost_text = true,
 		native_menu = false,
