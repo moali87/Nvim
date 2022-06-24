@@ -5,14 +5,9 @@ return packer.startup(function()
   use({ 'wbthomason/packer.nvim' })
   use({ 'neovim/nvim-lspconfig' })
   use({ 'tanvirtin/monokai.nvim' })
-  use({
-    'jose-elias-alvarez/null-ls.nvim',
-    config = function ()
-      require('plugin-configs.null-ls')
-    end
-  })
   use ({
     'projekt0n/github-nvim-theme',
+    require = { "nvim-lua/plenary.nvim" },
     config = function ()
       require("github-theme").setup({
         theme_style = "dark_default",
@@ -22,10 +17,10 @@ return packer.startup(function()
   use({ 'folke/lsp-colors.nvim' })
   use({ 'nvim-lua/plenary.nvim' })
   use({ 'kdheepak/lazygit.nvim' })
-  use({ 'rcarriga/nvim-notify', config = function ()
+  --[[ use({ 'rcarriga/nvim-notify', config = function ()
     require('plugin-configs.notify')
     vim.notify = require('notify')
-  end})
+  end}) ]]
   use({ 'lewis6991/impatient.nvim', config = function () require('impatient').enable_profile() end })
   use({
     'nvim-treesitter/nvim-treesitter',
@@ -99,14 +94,13 @@ return packer.startup(function()
   })
 
   -- lint
-  --[[ use({
-    'mfussenegger/nvim-lint',
-    requires = { { 'neovim/nvim-lspconfig' }},
-    event = "BufRead",
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      require('lint').linters_by_ft = require('plugin-configs.nvim-lint')
-    end
-  }) ]]
+      require('plugin-configs.null-ls')
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
 
   -- neorg
   use({
