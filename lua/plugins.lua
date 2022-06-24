@@ -5,6 +5,12 @@ return packer.startup(function()
   use({ 'wbthomason/packer.nvim' })
   use({ 'neovim/nvim-lspconfig' })
   use({ 'tanvirtin/monokai.nvim' })
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function ()
+      require('plugin-configs.null-ls')
+    end
+  })
   use ({
     'projekt0n/github-nvim-theme',
     config = function ()
@@ -93,14 +99,14 @@ return packer.startup(function()
   })
 
   -- lint
-  use({
+  --[[ use({
     'mfussenegger/nvim-lint',
     requires = { { 'neovim/nvim-lspconfig' }},
     event = "BufRead",
     config = function()
       require('lint').linters_by_ft = require('plugin-configs.nvim-lint')
     end
-  })
+  }) ]]
 
   -- neorg
   use({

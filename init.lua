@@ -48,12 +48,10 @@ set wildmode=full,list
 set nocompatible
 set shell=/usr/local/bin/fish
 syntax on
-au BufWritePost <buffer> lua require('lint').try_lint()
 set completeopt=menu,menuone,noselect
 set fillchars+=vert:\|
 hi vertsplit guifg=fg guibg=bg
 hi Visual term=reverse cterm=reverse guibg=Grey
-set winbar=%f
 set laststatus=3
 ]])
 
