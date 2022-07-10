@@ -42,7 +42,6 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-i>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
@@ -51,7 +50,6 @@ cmp.setup({
 		-- 	-- Accept currently selected item. If none selected, `select` first item.
 		-- 	-- Set `select` to `false` to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
-		-- ["<Space><Space>"] = cmp.mapping.confirm({ select = false }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -83,10 +81,9 @@ cmp.setup({
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
-				copilot = "[Copilot]",
-				luasnip = "LuaSnip",
-				nvim_lua = "[NVim Lua]",
 				nvim_lsp = "[LSP]",
+				nvim_lua = "[NVim Lua]",
+				luasnip = "[LuaSnip]",
 				buffer = "[Buffer]",
 				path = "[Path]",
 			})[entry.source.name]
@@ -96,10 +93,10 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lsp' },
-    { name = 'fish' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'nvim_lua' },
+    { name = 'nvim_lua', ft = 'lua' },
     { name = 'path' },
+    { name = 'fish' },
     { name = 'buffer' },
   }),
 	confirm_opts = {
@@ -138,5 +135,11 @@ cmp.setup.filetype('gitcommit', {
     { name = 'buffer' },
   })
 })
+
+if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
+  cmp.setup.buffer({
+    completion = false
+  })
+end
 
 return cmp
