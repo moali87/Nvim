@@ -5,18 +5,10 @@ return packer.startup(function()
   use({ 'wbthomason/packer.nvim' })
   use({ 'neovim/nvim-lspconfig' })
   use({ 'tanvirtin/monokai.nvim' })
-  use({
-    'projekt0n/github-nvim-theme',
-    require = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("github-theme").setup({
-        theme_style = "dark_default",
-      })
-    end
-  })
   use({ 'folke/lsp-colors.nvim' })
   use({ 'nvim-lua/plenary.nvim' })
   use({ 'kdheepak/lazygit.nvim' })
+  use({ 'glepnir/dashboard-nvim' })
   use({ 'lewis6991/impatient.nvim', config = function() require('impatient').enable_profile() end })
   use({
     'nvim-treesitter/nvim-treesitter',
@@ -32,14 +24,22 @@ return packer.startup(function()
   use({
     'hrsh7th/nvim-cmp',
     after = 'nvim-lspconfig',
-    event = 'VimEnter',
+    event = {'InsertEnter *', 'CmdlineEnter'},
     requires = {
       {
         'L3MON4D3/LuaSnip',
         config = function()
           require('plugin-configs.luasnip')
         end,
-        requires = { 'saadparwaiz1/cmp_luasnip' },
+        requires = {
+          'saadparwaiz1/cmp_luasnip',
+          'hrsh7th/cmp-buffer',
+          'hrsh7th/cmp-cmdline',
+          'hrsh7th/cmp-nvim-lsp',
+          'hrsh7th/cmp-nvim-lsp-signature-help',
+          'hrsh7th/cmp-nvim-lua',
+          'hrsh7th/cmp-path'
+        },
       },
     },
     config = function()
@@ -47,40 +47,43 @@ return packer.startup(function()
     end
   })
 
-  use({
-    'ray-x/navigator.lua',
-    requires = {
-      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-      { 'neovim/nvim-lspconfig' },
-    },
+  -- Trouble
+  use {
+    "folke/trouble.nvim",
+    requires = 'hrsh7th/nvim-cmp',
     config = function()
-      require('navigator').setup({
-        lsp = {
-          format_on_save = false
-        }
-      })
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  -- notify
+  use({
+    'rcarriga/nvim-notify',
+    requires = 'hrsh7th/nvim-cmp',
+    config = function()
+      vim.notify = require('notify')
+      require('plugin-configs.notify')
     end
   })
 
+  -- nvim-go
   use({
-    'ray-x/go.nvim',
-    requires = {
-      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-    },
-    config = function ()
-      require('go').setup()
+    'crispgm/nvim-go',
+    requires = 'rcarriga/nvim-notify',
+    config = function()
+      require('go').setup({})
     end
   })
 
-  use({ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp',
-    config = function()
-      require('plugin-configs.cmp-lsp-config')
-    end })
-  use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
+  -- bufdelete
+  use({
+    'famiu/bufdelete.nvim',
+    event = 'BufWinEnter'
+  })
 
   -- lualine
   use({
