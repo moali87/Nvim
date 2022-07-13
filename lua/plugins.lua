@@ -24,7 +24,8 @@ return packer.startup(function()
   use({
     'hrsh7th/nvim-cmp',
     after = 'nvim-lspconfig',
-    event = {'InsertEnter *', 'CmdlineEnter'},
+    -- event = {'InsertEnter *', 'CmdlineEnter'},
+    event = 'BufWinEnter',
     requires = {
       {
         'L3MON4D3/LuaSnip',
