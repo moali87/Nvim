@@ -142,12 +142,28 @@ return packer.startup(function()
   })
 
   -- lint
-  use({
+  --[[ use({
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
       require('plugin-configs.null-ls')
     end,
     requires = { "nvim-lua/plenary.nvim" },
+  }) ]]
+
+  use({
+    'mfussenegger/nvim-lint',
+    branch = 'master',
+    config = function ()
+      require('lint').linters_by_ft = {
+        markdown = {'vale', 'markdownlint'},
+        javascript = {'eslint'},
+        typescript = {'eslint'},
+        go = {'golangcilint'},
+      }
+      vim.api.nvim_create_autocmd({"BufWritePost"}, {
+        command = ":lua require('lint').try_lint()"
+      })
+    end
   })
 
   -- neorg
