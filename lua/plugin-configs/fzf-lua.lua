@@ -227,7 +227,7 @@ return {
     -- NOTE: 'find -printf' requires GNU find
     -- cmd            = "find . -type f -printf '%P\n'",
     find_opts         = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
-    rg_opts           = "--color=never --files --hidden --follow -g '!.git'",
+    -- rg_opts           = "--color=never --files --hidden --follow -g '!.git'",
     fd_opts           = "--color=never --type f --hidden --follow --exclude .git",
     actions = {
       -- inherits from 'actions.files', here we can override
@@ -314,7 +314,7 @@ return {
     -- default options are controlled by 'rg|grep_opts'
     -- cmd            = "rg --vimgrep",
     grep_opts         = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
-    rg_opts           = "--column --line-number --no-heading --color=always --smart-case --max-columns=512",
+    -- rg_opts           = "--column --line-number --no-heading --color=always --smart-case --max-columns=512",
     -- set to 'true' to always parse globs in both 'grep' and 'live_grep'
     -- search strings will be split using the 'glob_separator' and translated
     -- to '--iglob=' arguments, requires 'rg'
@@ -408,7 +408,7 @@ return {
     git_icons             = true,
     color_icons           = true,
     -- 'tags_live_grep' options, `rg` prioritizes over `grep`
-    rg_opts               = "--no-heading --color=always --smart-case",
+    -- rg_opts               = "--no-heading --color=always --smart-case",
     grep_opts             = "--color=auto --perl-regexp",
     actions = {
       -- actions inherit from 'actions.files' and merge

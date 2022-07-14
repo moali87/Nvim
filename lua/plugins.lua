@@ -39,7 +39,13 @@ return packer.startup(function()
           'hrsh7th/cmp-nvim-lsp',
           'hrsh7th/cmp-nvim-lsp-signature-help',
           'hrsh7th/cmp-nvim-lua',
-          'hrsh7th/cmp-path'
+          'hrsh7th/cmp-path',
+          {
+            'ibhagwan/fzf-lua',
+            config = function ()
+              require('plugin-configs.fzf-lua')
+            end
+          }
         },
       },
     },
@@ -98,13 +104,13 @@ return packer.startup(function()
   })
 
   -- fzf-lua
-  use({
+  --[[ use({
     'ibhagwan/fzf-lua',
     event = "VimEnter",
     config = function()
       require('plugin-configs.fzf-lua')
     end
-  })
+  }) ]]
 
   -- bufferline
   use({

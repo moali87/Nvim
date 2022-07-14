@@ -84,7 +84,8 @@ nmap("<Leader>j", "<C-W><C-L>")
 
 -- Map fzf-lua
 nmap("<C-o>", "<cmd>lua require('fzf-lua').files({ fd_opts = \"--hidden  --color=always --exclude '{API.*,.git/*,node_modules/*,docs/*}'\"})<CR>")
-nmap("<C-p>", "<cmd>lua require('fzf-lua').live_grep({ rg_opts = \"--hidden --column --line-number --no-heading --color=always --smart-case -g '!{API.*,.git,node_modules,package-lock.json,docs/*}'\"})<CR>")
+nmap("<C-p>", "<cmd>lua require('fzf-lua').grep_visual()<CR>")
+-- nmap("<C-p>", "<cmd>lua require('fzf-lua').live_grep({ rg_opts = '--hidden --column --line-number --no-heading --color=always --smart-case '})<CR>")
 
 -- Map Terminal
 tmap("<Leader><ESC>", "<C-\\><C-n>")
