@@ -4,12 +4,18 @@ return packer.startup(function()
   -- Non lazy loaded plugins
   use({ 'wbthomason/packer.nvim' })
   use({ 'neovim/nvim-lspconfig' })
-  use({ 'tanvirtin/monokai.nvim' })
+  use({ 'Yazeed1s/minimal.nvim' })
   use({ 'folke/lsp-colors.nvim' })
   use({ 'nvim-lua/plenary.nvim' })
   use({ 'kdheepak/lazygit.nvim' })
   use({ 'glepnir/dashboard-nvim' })
   use({ 'lewis6991/impatient.nvim', config = function() require('impatient').enable_profile() end })
+  use({
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  })
   use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -25,7 +31,7 @@ return packer.startup(function()
     'hrsh7th/nvim-cmp',
     after = 'nvim-lspconfig',
     -- event = {'InsertEnter *', 'CmdlineEnter'},
-    event = 'BufWinEnter',
+    event = 'VimEnter',
     requires = {
       {
         'L3MON4D3/LuaSnip',
@@ -40,12 +46,6 @@ return packer.startup(function()
           'hrsh7th/cmp-nvim-lsp-signature-help',
           'hrsh7th/cmp-nvim-lua',
           'hrsh7th/cmp-path',
-          {
-            'ibhagwan/fzf-lua',
-            config = function ()
-              require('plugin-configs.fzf-lua')
-            end
-          }
         },
       },
     },
@@ -54,10 +54,18 @@ return packer.startup(function()
     end
   })
 
+  use({ 'anuvyklack/fold-preview.nvim',
+   requires = 'anuvyklack/keymap-amend.nvim',
+   event = 'VimEnter',
+   config = function()
+      require('fold-preview').setup()
+   end
+  })
+
   -- Trouble
   use {
     "folke/trouble.nvim",
-    requires = 'hrsh7th/nvim-cmp',
+    event = {'InsertLeavePre'},
     config = function()
       require("trouble").setup {
         -- your configuration comes here
@@ -104,13 +112,13 @@ return packer.startup(function()
   })
 
   -- fzf-lua
-  --[[ use({
+  use({
     'ibhagwan/fzf-lua',
     event = "VimEnter",
     config = function()
       require('plugin-configs.fzf-lua')
     end
-  }) ]]
+  })
 
   -- bufferline
   use({
@@ -126,9 +134,9 @@ return packer.startup(function()
 
   -- lspinstaller
   use({
-    'williamboman/nvim-lsp-installer',
+    'williamboman/mason.nvim',
     config = function ()
-      require("nvim-lsp-installer").setup({
+      require("mason").setup({
         automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
         ui = {
           icons = {
@@ -142,29 +150,32 @@ return packer.startup(function()
   })
 
   -- lint
-  --[[ use({
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      require('plugin-configs.null-ls')
-    end,
-    requires = { "nvim-lua/plenary.nvim" },
-  }) ]]
-
+  -- null-ls 
   use({
-    'mfussenegger/nvim-lint',
-    branch = 'master',
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
     config = function ()
-      require('lint').linters_by_ft = {
-        markdown = {'vale', 'markdownlint'},
-        javascript = {'eslint'},
-        typescript = {'eslint'},
-        go = {'golangcilint'},
-      }
-      vim.api.nvim_create_autocmd({"BufWritePost"}, {
-        command = ":lua require('lint').try_lint()"
-      })
+      require('plugin-configs.null-ls')
     end
   })
+
+  -- nvim-lint
+  -- use({
+  --   'mfussenegger/nvim-lint',
+  --   branch = 'master',
+  --   event = {"InsertLeavePre"},
+  --   config = function ()
+  --     require('lint').linters_by_ft = {
+  --       markdown = {'vale', 'markdownlint'},
+  --       javascript = {'eslint'},
+  --       typescript = {'eslint'},
+  --       go = {'golangcilint'},
+  --     }
+  --     vim.api.nvim_create_autocmd({"InsertLeavePre"}, {
+  --       command = ":lua require('lint').try_lint()"
+  --     })
+  --   end
+  -- })
 
   -- neorg
   use({

@@ -33,7 +33,7 @@ set foldlevel=2
 
 -- VIM Colorscheme
 vim.api.nvim_command("set termguicolors")
-vim.api.nvim_command("colorscheme monokai_pro")
+vim.api.nvim_command("colorscheme minimal")
 
 -- VIM editor settings
 vim.api.nvim_command([[

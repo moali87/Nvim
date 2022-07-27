@@ -1,13 +1,25 @@
-local null_ls = require("null-ls")
-
-null_ls.setup({
+local nls = require("null-ls")
+nls.setup({
   sources = {
-    null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.diagnostics.golangci_lint,
-    null_ls.builtins.completion.luasnip,
-    null_ls.builtins.diagnostics.markdownlint,
-    null_ls.builtins.diagnostics.pylint,
-    null_ls.builtins.diagnostics.fish,
-    null_ls.builtins.formatting.stylua
-  },
+    nls.builtins.hover.dictionary,
+    nls.builtins.formatting.eslint_d,
+    nls.builtins.diagnostics.eslint_d,
+    nls.builtins.code_actions.eslint_d,
+    nls.builtins.diagnostics.cfn_lint,
+    nls.builtins.diagnostics.fish,
+    nls.builtins.diagnostics.golangci_lint,
+    nls.builtins.formatting.gofumpt,
+    nls.builtins.formatting.goimports,
+    nls.builtins.diagnostics.jsonlint,
+    nls.builtins.diagnostics.luacheck,
+    nls.builtins.formatting.lua_format,
+    nls.builtins.diagnostics.pylint,
+    nls.builtins.diagnostics.rubocop,
+    nls.builtins.formatting.rubocop,
+    nls.builtins.diagnostics.shellcheck,
+    nls.builtins.diagnostics.vale,
+    nls.builtins.diagnostics.yamllint,
+    nls.builtins.formatting.rustfmt,
+    nls.builtins.formatting.terraform_fmt
+  }
 })

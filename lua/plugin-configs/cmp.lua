@@ -240,3 +240,8 @@ if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rus
     completion = false
   })
 end
+
+-- Disable virtual_text from lspconfig.  Should be handled by other plugins
+vim.diagnostic.config({
+  virtual_text = false,
+})
