@@ -159,24 +159,6 @@ return packer.startup(function()
     end
   })
 
-  -- nvim-lint
-  -- use({
-  --   'mfussenegger/nvim-lint',
-  --   branch = 'master',
-  --   event = {"InsertLeavePre"},
-  --   config = function ()
-  --     require('lint').linters_by_ft = {
-  --       markdown = {'vale', 'markdownlint'},
-  --       javascript = {'eslint'},
-  --       typescript = {'eslint'},
-  --       go = {'golangcilint'},
-  --     }
-  --     vim.api.nvim_create_autocmd({"InsertLeavePre"}, {
-  --       command = ":lua require('lint').try_lint()"
-  --     })
-  --   end
-  -- })
-
   -- neorg
   use({
     'nvim-neorg/neorg',

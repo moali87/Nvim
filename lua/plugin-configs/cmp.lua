@@ -90,7 +90,8 @@ local servers = {
   'tsserver',
   'gopls',
   'terraformls',
-  'tflint'
+  'tflint',
+  'yamlls'
 }
 
 for _, lsp in ipairs(servers) do
@@ -194,6 +195,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lua', ft = 'lua' },
+    { name = 'neorg' },
     { name = 'path' },
     { name = 'fish' },
     { name = 'buffer' },
