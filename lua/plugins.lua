@@ -65,7 +65,7 @@ return packer.startup(function()
   -- Trouble
   use {
     "folke/trouble.nvim",
-    event = {'InsertLeavePre'},
+    -- event = {'InsertLeavePre'},
     config = function()
       require("trouble").setup {
         -- your configuration comes here
