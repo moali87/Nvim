@@ -37,6 +37,8 @@ vim.api.nvim_command("colorscheme minimal")
 
 -- VIM editor settings
 vim.api.nvim_command([[
+set relativenumber
+set number
 set expandtab
 set tabstop=2
 set softtabstop=2
