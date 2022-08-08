@@ -6,7 +6,7 @@ require('key-functions')
 vim.g.mapleader = ","
 
 -- python3
-vim.g.python3_host_prog = "~/.pyenv/shims/python"
+vim.g.python3_host_prog = "expand('~/.pyenv/shims/python')"
 
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
