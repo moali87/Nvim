@@ -16,22 +16,21 @@ return packer.startup(function()
       require("lsp_lines").setup()
     end,
   })
+  -- Lazy loaded plugins
+
   use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    -- event = 'BufEnter',
+    event = 'BufRead',
     config = function()
       require('nvim-treesitter.configs').setup(require('plugin-configs.treesitter'))
     end
   })
-
-  -- Lazy loaded plugins
   -- cmp and cmp attachments
   use({
     'hrsh7th/nvim-cmp',
     after = 'nvim-lspconfig',
-    -- event = {'InsertEnter *', 'CmdlineEnter'},
-    event = 'VimEnter',
+    -- event = {'InsertEnter *', 'CmdlineEnter'}, -- Can't do this cause it's slow
     requires = {
       {
         'L3MON4D3/LuaSnip',
@@ -56,24 +55,26 @@ return packer.startup(function()
 
   use({ 'anuvyklack/fold-preview.nvim',
    requires = 'anuvyklack/keymap-amend.nvim',
-   event = 'VimEnter',
+   -- event = 'VimEnter',
+   keys = {'h', 'l'},
    config = function()
       require('fold-preview').setup()
    end
   })
 
   -- Trouble
-  use {
-    "folke/trouble.nvim",
-    -- event = {'InsertLeavePre'},
-    config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  -- use {
+  --   "folke/trouble.nvim",
+  --   -- event = {'InsertLeavePre'},
+  --   config = function()
+  --     require("trouble").setup {
+  --       icons = false
+  --       -- your configuration comes here
+  --       -- or leave it empty to use the default settings
+  --       -- refer to the configuration section below
+  --     }
+  --   end
+  -- }
 
   -- notify
   use({
@@ -114,7 +115,7 @@ return packer.startup(function()
   -- fzf-lua
   use({
     'ibhagwan/fzf-lua',
-    event = "VimEnter",
+    -- keys = {'<C-o>', '<C-p>'},
     config = function()
       require('plugin-configs.fzf-lua')
     end
@@ -150,7 +151,7 @@ return packer.startup(function()
   })
 
   -- lint
-  -- null-ls 
+  -- null-ls
   use({
     'jose-elias-alvarez/null-ls.nvim',
     requires = {'nvim-lua/plenary.nvim'},

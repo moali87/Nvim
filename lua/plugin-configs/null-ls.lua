@@ -1,5 +1,6 @@
 local nls = require("null-ls")
 nls.setup({
+  debug = true,
   sources = {
     nls.builtins.hover.dictionary,
     nls.builtins.formatting.eslint_d,
@@ -11,8 +12,6 @@ nls.setup({
     nls.builtins.formatting.gofumpt,
     nls.builtins.formatting.goimports,
     nls.builtins.diagnostics.jsonlint,
-    nls.builtins.diagnostics.luacheck,
-    nls.builtins.formatting.lua_format,
     nls.builtins.diagnostics.pylint,
     nls.builtins.diagnostics.rubocop,
     nls.builtins.formatting.rubocop,
@@ -21,5 +20,7 @@ nls.setup({
     nls.builtins.diagnostics.yamllint,
     nls.builtins.formatting.rustfmt,
     nls.builtins.formatting.terraform_fmt
+    -- nls.builtins.formatting.stylua,
+    -- nls.builtins.diagnostics.selene
   }
 })

@@ -19,8 +19,8 @@ vim.opt.encoding = "utf-8"
 
 -- VIM RTP
 vim.api.nvim_command([[
-set rtp+=/usr/local/opt/fzf
 set rtp+=~/.local/share/nvm/v16.13.0
+set rtp+=~/opt/homebrew/bin/
 ]])
 
 -- VIM folding
@@ -36,7 +36,9 @@ vim.api.nvim_command("set termguicolors")
 vim.api.nvim_command("colorscheme minimal")
 
 -- VIM editor settings
+vim.opt.guicursor = ""
 vim.api.nvim_command([[
+set scrolloff=10
 set relativenumber
 set number
 set expandtab
@@ -91,7 +93,7 @@ nmap("<C-p>", "<cmd>lua require('fzf-lua').grep_visual()<CR>")
 
 -- Map Terminal
 tmap("<Leader><ESC>", "<C-\\><C-n>")
-nmap("<F9>", "<cmd> vsplit | term<CR>")
+tmap("<F9>", "<cmd> vsplit | term<CR>")
 
 -- MISC toggles
 nmap("<F4>", "<cmd> IndentBlanklineToggle<CR>")

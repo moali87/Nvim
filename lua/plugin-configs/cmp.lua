@@ -39,48 +39,21 @@ table.insert(runtime_path, "lua/?/init.lua")
 local configs = require 'lspconfig/configs'
 
 if not configs.golangcilsp then
- 	configs.golangcilsp = {
-		default_config = {
-			cmd = {'golangci-lint-langserver'},
-			root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
-			init_options = {
-					command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json" };
-			}
-		};
-	}
+    configs.golangcilsp = {
+      default_config = {
+        cmd = {'golangci-lint-langserver'},
+        root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
+        init_options = {
+            command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json" };
+        }
+      };
+    }
 end
 
 lspconfig.golangci_lint_ls.setup {
 	filetypes = {'go','gomod'},
   on_attach = on_attach,
   capabilities = capabilities,
-}
-
-lspconfig.sumneko_lua.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
 }
 
 local servers = {
@@ -100,6 +73,37 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.sumneko_lua.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = {
+          vim.api.nvim_get_runtime_file("", true),
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+        }
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
